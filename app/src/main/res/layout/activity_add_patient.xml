@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar"
+    tools:context=".Activities.AddPatientActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="88dp"
+                android:onClick="ivSearch"
+                android:src="@drawable/ic_search" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/etid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="77dp"
+                android:gravity="right"
+                android:hint="الرقم التعريفي للمريض:"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="?colorAccent"
+                app:met_singleLineEllipsis="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/ivory"
+                android:onClick="cvDatePicker"
+                android:textDirection="ltr"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_gravity="right"
+                            android:src="@drawable/calendar1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="التاريخ" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.design.card.MaterialCardView>
+
+            <android.support.design.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/ivory"
+                android:onClick="cvTimePicker"
+                android:textDirection="ltr"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/clock" />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="الوقت " />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tvTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.design.card.MaterialCardView>
+        </LinearLayout>
+
+        <android.support.design.card.MaterialCardView
+            android:layout_width="236dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/ivory"
+            android:textDirection="ltr"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/colorPrimary"
+            app:strokeWidth="2dp">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="227dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:layoutDirection="rtl"
+                android:orientation="vertical">
+
+               <!-- <RadioButton
+                    android:visibility="invisible"
+                    android:id="@+id/rbNew"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:freezesText="true"
+                    android:gravity="right"
+                    android:onClick="checkButton"
+                    android:padding="4dp"
+                    android:text="معاينة"
+                    android:textSize="16dp" />-->
+
+                <RadioButton
+                    android:id="@+id/rbOld"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:freezesText="true"
+                    android:gravity="right"
+                    android:onClick="checkButton"
+                    android:padding="4dp"
+                    android:text="معالجة"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/rbTq"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:freezesText="true"
+                    android:gravity="right"
+                    android:onClick="checkButton"
+                    android:padding="4dp"
+                    android:text="تقويم"
+                    android:textSize="16dp" />
+
+
+            </RadioGroup>
+
+        </android.support.design.card.MaterialCardView>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/rounded_shape"
+            android:elevation="12dp"
+            android:onClick="buAdd"
+            android:shadowRadius="122"
+            android:text="إضافة"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+        <!--<Button
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/rounded_shape"
+            android:elevation="12dp"
+            android:onClick="buTest"
+            android:shadowRadius="122"
+            android:text="test it"
+            android:textColor="@color/white"
+            android:textSize="15dp" />-->
+    </LinearLayout>
+
+</FrameLayout>

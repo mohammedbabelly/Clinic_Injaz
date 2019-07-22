@@ -1,0 +1,111 @@
+ public bool Check_Book()
+        {
+            int Count = -1;
+            if (OpenConnection() == true)
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "SELECT COUNT(id) FROM patientbook WHERE idBook=@id and Date=@Date";
+                    cmd.Parameters.Add(new MySqlParameter("@id", Id_Book));
+                    cmd.Parameters.Add(new MySqlParameter("@Date", Date));
+                    Count = int.Parse(cmd.ExecuteScalar() + "");
+                    CloseConnection();
+                    if (Count == 0)
+                        return false;
+                    else
+                        return true;
+                }
+                catch (Exception e)
+                {
+                    CloseConnection();
+                    return true;
+                }
+            else
+                return true;
+        }
+
+
+
+
+ public void Add_Patient_Book()
+        {
+            if (OpenConnection() == true)
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = connection;
+                    cmd.CommandText = @"INSERT INTO patientbook 
+                            (date,done,idBook,idPatient,idSession,type)
+                                    VALUES
+                                   (@date,@done,@idBook,@idPatient,null,@type)";
+                    cmd.Parameters.Add(new MySqlParameter("@date", Date));
+                    cmd.Parameters.Add(new MySqlParameter("@done", Done));
+                    cmd.Parameters.Add(new MySqlParameter("@idBook", Id_Book));
+                    cmd.Parameters.Add(new MySqlParameter("@idPatient", id_Patient));
+                    cmd.Parameters.Add(new MySqlParameter("@type", Type));
+                    cmd.ExecuteNonQuery();
+                    CloseConnection();
+                }
+                catch (Exception e)
+                {
+                    CloseConnection();
+                }
+            }
+        }
+
+
+  public int Find_Id()
+        {
+
+            int Id = -1;
+            if (OpenConnection() == true)
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "SELECT idBook FROM Book WHERE Time=@Time and Day=@Day";
+                    cmd.Parameters.Add(new MySqlParameter("@Time", Time.Hour+":"+Time.Minute));
+                    cmd.Parameters.Add(new MySqlParameter("@Day", Day));
+
+                    Id = int.Parse(cmd.ExecuteScalar() + "");
+                    CloseConnection();
+                    return Id;
+                }
+                catch (Exception e)
+                {
+                    CloseConnection();
+                    return -1;
+                }
+            else
+                return -1;
+}
+
+
+
+string day = date.DayOfWeek.ToString();
+            if(day==DayOfWeek.Sunday.ToString())
+            {
+                book.Day = "الأحد";
+            }
+            else if (day == DayOfWeek.Monday.ToString())
+            {
+                book.Day = "الاثنين";
+            }
+            else if (day == DayOfWeek.Tuesday.ToString())
+            {
+                book.Day = "الثلاثاء";
+            }
+            else if (day == DayOfWeek.Wednesday.ToString())
+            {
+                book.Day = "الأربعاء";
+            }
+            else if (day == DayOfWeek.Thursday.ToString())
+            {
+                book.Day = "الخميس";
+            }
+            else if (day == DayOfWeek.Saturday.ToString())
+            {
+                book.Day = "السبت";
+            }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+
+    <item android:title="Schedule">
+        <menu>
+            <item
+                android:id="@+id/nav_day"
+                android:icon="@drawable/ic_today"
+                android:title="مواعيد اليوم" />
+            <item
+                android:id="@+id/nav_weak"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="مواعيد الاسبوع" />
+        </menu>
+    </item>
+    <item android:title="Extra">
+        <menu>
+            <item
+                android:id="@+id/nav_search"
+                android:icon="@drawable/ic_search"
+                android:title="بحث" />
+            <item
+                android:id="@+id/nav_add"
+                android:icon="@drawable/ic_add"
+                android:title="إضافة موعد" />
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/ic_exit"
+                android:title="خروج" />
+        </menu>
+    </item>
+
+
+</menu>
